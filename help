@@ -18,3 +18,13 @@ alors pour faire avencer qqch automatiquement
         GetComponent<Camera>().transform.Translate(avence, 0, 0);
         
       joueur.<nomDeLObjetJoueur>().transform.Translate(avence, 0, 0);
+      //POUR LA CREATION D'UN IMMEUBLE
+      Texture2D _texture = (Texture2D)Resources.Load("Noir",typeof(Texture2D))as Texture2D;//NOIR == juste le nom de l'image qui est dans asset avec un répertoire que vous devez crée se nomant Assets\Resources
+
+		Sprite newSprite = Sprite.Create(_texture, new Rect(0f, 0f, _texture.width, _texture.height), new Vector2(0.5f, 0.5f),128f);
+	    GameObject sprGameObj = new GameObject();
+		sprGameObj.name = "something";
+		sprGameObj.AddComponent<SpriteRenderer>();
+		SpriteRenderer sprRenderer = sprGameObj.GetComponent<SpriteRenderer>();
+		sprRenderer.sprite = newSprite;
+		sprRenderer.transform.position = Vector2.zero;
